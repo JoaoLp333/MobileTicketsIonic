@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Painel do Atendente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Número do Guichê:</ion-label>
+    <ion-input type="number" [(ngModel)]="guicheAtual"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="proximo()">CHAMAR PRÓXIMO</ion-button>
+
+  <ion-list>
+    <ion-list-header>Últimas 5 Chamadas</ion-list-header>
+    <ion-item *ngFor="let t of ultimas">
+      <ion-label>
+        <h2>Senha: <strong>{{ t.id }}</strong></h2>
+        <p>Guichê: {{ t.guiche }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
